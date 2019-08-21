@@ -9,7 +9,7 @@ module.exports = async toolbox => {
         baseURL: 'https://api.spotify.com/v1/',
         headers: { Authorization: `Bearer ${accessToken}` },
     })
-
+    
      return spotifyApi
 
     }

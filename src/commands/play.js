@@ -6,14 +6,12 @@ module.exports = {
         const id = parameters.first
         const select = await api()
 
-        let body = {"uris": ["spotify:track:48VsT5UCEE458bRZZiZN5w", "spotify:track:1301WleyT98MSxVHPZCA6M"]}
+        let body = {"uris": []}
+        body.uris.push(id)
 
         let response = await select.put('/me/player/play', body)
 
-        return response
-
-    
-
+        return response   
 
     }
 }

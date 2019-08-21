@@ -2,7 +2,7 @@ module.exports = {
     name: 'search',
     alias: ['s'],
     run: async toolbox => {  
-        const { parameters, api, prompt } = toolbox
+        const { parameters, api, prompt, play } = toolbox
         const search = await api()
         const subcommand = parameters.first
         const query = parameters.second
@@ -16,7 +16,7 @@ module.exports = {
         let results, matches
 
         switch(subcommand) {
-            case 'artist':
+            case 'artists':
                 queryParams.type = 'artist'
                 results = await search.get('/search', queryParams)
                 matches = [...results.data.artists.items].map(match => {
@@ -26,24 +26,34 @@ module.exports = {
                     }
                 })
                 console.log(matches)
+                
                 break;
-            case 'playlist':
+            case 'playlists':
                 console.log('search for playlist')
                 break;
-            case 'album':
+            case 'albums':
                 queryParams.type = 'album'
                 results = await search.get('/search', queryParams)
                 matches = [...results.data.albums.items].map(match => {
                     return {
                         name: match.name,
-                        id: match.id
+                        uri: match.uri
                     }
                 })
                 console.log(matches)
                 
                 break;
-            case 'track': 
-                console.log('search for track')
+            case 'tracks': 
+                queryParams.type = 'track'
+                results = await search.get('/search', queryParams)
+                console.log(results.data)
+                matches = [...results.data.tracks.items].map(match => {
+                    return {
+                        name: match.name,
+                        uri: match.uri
+                    }
+                })
+                console.log(matches)
                 break;
             default: 
                 console.log('search')
