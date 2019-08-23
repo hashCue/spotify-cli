@@ -22,7 +22,6 @@ module.exports = {
             case 'artists':
                 queryParams.type = 'artist'
                 results = await search.get('/search', queryParams)
-                console.log('results', results.data.artists.items)
                 matches = [...results.data.artists.items].map(match => {
                     return {
                         name: match.name,
