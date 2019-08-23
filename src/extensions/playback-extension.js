@@ -5,7 +5,7 @@ module.exports = async toolbox => {
      const { accessToken } = await tokens()
 
 
-     const spotifyApi = toolbox.http.create({
+     const spotifyApi = http.create({
         baseURL: 'https://api.spotify.com/v1/me/player/',
         headers: { Authorization: `Bearer ${accessToken}` },
     })

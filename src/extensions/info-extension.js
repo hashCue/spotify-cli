@@ -4,7 +4,6 @@ module.exports = async toolbox => {
         
         let info = await playback()
 
-
         const {artists, name} = info.item
 
         const artistName = artists[0].name
