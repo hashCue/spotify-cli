@@ -4,10 +4,11 @@ module.exports = async toolbox => {
         
         let info = await playback()
 
-        const {artists, name} = info.item
+        if (info) {
+            const {artists, name} = info.item
+            const artistName = artists[0].name    
+            return `now playing: ${name} by ${artistName}`
+        }
 
-        const artistName = artists[0].name
-
-        return `now playing: ${name} by ${artistName}`
     }
   }
