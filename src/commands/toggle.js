@@ -1,7 +1,7 @@
 
 module.exports = {
-    name: 'toggle',
-    alias: ['t'],
+    name: 'play',
+    alias: ['p'],
     run: async toolbox => {
 
         const { tokens, playback } = toolbox

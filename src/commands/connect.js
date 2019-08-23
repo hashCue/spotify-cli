@@ -3,7 +3,7 @@ module.exports = {
       const { print, connect, prompt, filesystem } = toolbox
       const fs = require('fs')
       
-      connect()
+      await connect()
 
       const askAccess = { type: 'input', name: 'accessToken', message: 'What is your access token?' }
       const askRefresh = { type: 'input', name: 'refreshToken', message: 'What is your refresh token?' }

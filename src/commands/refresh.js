@@ -8,7 +8,7 @@ module.exports = {
         console.log('creating refresh instance')
 
         const refresh = toolbox.http.create({
-            baseURL: 'http://localhost:8888'
+            baseURL: 'https://spotify-cli.herokuapp.com'
         })
 
         const newToken = await refresh.get('/refresh_token', {

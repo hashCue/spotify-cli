@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'play',
-    alias: ['p'],
+    name: 'select',
+    alias: ['s'],
     run: async toolbox => {
         const { api, prompt, parameters, playback, info} = toolbox
         const id = parameters.first
