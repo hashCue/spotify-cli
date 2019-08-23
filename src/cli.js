@@ -1,10 +1,5 @@
 const { build } = require('gluegun')
 
-let tokens = {
-  accessToken: '',
-  refreshToken: ''
-}
-
 /**
  * Create the cli and kick it off
  */
