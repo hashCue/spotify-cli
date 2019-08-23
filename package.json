@@ -1,6 +1,6 @@
 {
   "name": "@hashcue/spotify-cli",
-  "version": "0.0.2-3",
+  "version": "0.0.2-4",
   "description": "spotify CLI",
   "private": false,
   "main": "bin/spotify",
