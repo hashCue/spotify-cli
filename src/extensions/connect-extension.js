@@ -7,11 +7,11 @@ module.exports = async toolbox => {
          baseURL: 'https://spotify-cli.herokuapp.com'
      })
 
-     const { ok, problem, data } = await api.get('/login') 
-    
+     const { data } = await api.get('/login') 
+     console.log(data)
      print.info('opening a web browser for the log in flow')
 
-     await open(data)
+    open(data)
 
     }
 }
