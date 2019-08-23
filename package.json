@@ -1,6 +1,6 @@
 {
   "name": "spotify",
-  "version": "0.0.1",
+  "version": "0.0.2-0",
   "description": "spotify CLI",
   "private": true,
   "bin": {
