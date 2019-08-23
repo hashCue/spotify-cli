@@ -4,8 +4,11 @@ module.exports = {
     run: async toolbox => {  
         const { parameters, api, prompt, play } = toolbox
         const search = await api()
+        const playback = await play()
         const subcommand = parameters.first
         const query = parameters.second
+
+
 
         let queryParams = {
             q: query,
@@ -13,12 +16,13 @@ module.exports = {
             limit: 5,
         }
 
-        let results, matches
+        let results, matches, data
 
         switch(subcommand) {
             case 'artists':
                 queryParams.type = 'artist'
                 results = await search.get('/search', queryParams)
+                console.log('results', results.data.artists.items)
                 matches = [...results.data.artists.items].map(match => {
                     return {
                         name: match.name,
@@ -26,7 +30,6 @@ module.exports = {
                     }
                 })
                 console.log(matches)
-                
                 break;
             case 'playlists':
                 console.log('search for playlist')
